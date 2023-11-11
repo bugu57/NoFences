@@ -3,6 +3,7 @@ using NoFences.Util;
 using NoFences.Win32;
 using Peter;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -70,7 +71,6 @@ namespace NoFences
 
             AllowDrop = true;
 
-
             this.fenceInfo = fenceInfo;
             Text = fenceInfo.Name;
             Location = new Point(fenceInfo.PosX, fenceInfo.PosY);
@@ -106,6 +106,9 @@ namespace NoFences
             if ((m.Msg == WM_SYSCOMMAND) && m.WParam.ToInt32() == 0xF032)
             {
                 m.Result = IntPtr.Zero;
+
+                // Activate minify on header double click.
+                minifyToolStripMenuItem.Checked = !minifyToolStripMenuItem.Checked;
                 return;
             }
 
@@ -236,14 +239,7 @@ namespace NoFences
 
         private void minifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (isMinified)
-            {
-                Height = prevHeight;
-                isMinified = false;
-            }
-            fenceInfo.CanMinify = minifyToolStripMenuItem.Checked;
-            Save();
-
+            ActivateMinify(minifyToolStripMenuItem.Checked);
         }
 
         private void FenceWindow_Click(object sender, EventArgs e)
@@ -496,6 +492,19 @@ namespace NoFences
         {
             return File.Exists(path) || Directory.Exists(path);
         }
+
+        private void ActivateMinify(bool canMinify)
+        {
+            if (isMinified)
+            {
+                Height = prevHeight;
+                isMinified = false;
+            }
+
+            fenceInfo.CanMinify = canMinify;
+            Save();
+        }
+
     }
 
 }
