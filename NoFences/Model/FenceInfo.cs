@@ -36,6 +36,8 @@ namespace NoFences.Model
         /// </summary>
         public int TitleHeight { get; set; } = 35;
 
+        public double Opacity { get; set; } = 1.0;
+
         public List<string> Files { get; set; } = new List<string>();
 
         public FenceInfo()
