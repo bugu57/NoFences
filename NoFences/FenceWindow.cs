@@ -74,6 +74,7 @@ namespace NoFences
             this.fenceInfo = fenceInfo;
             Text = fenceInfo.Name;
             Location = new Point(fenceInfo.PosX, fenceInfo.PosY);
+            Opacity = fenceInfo.Opacity;
 
             Width = fenceInfo.Width;
             Height = fenceInfo.Height;
@@ -505,6 +506,17 @@ namespace NoFences
             Save();
         }
 
+        private void opacityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dialog = new OpacityDialog(fenceInfo.Opacity);
+            if (dialog.ShowDialog(this) == DialogResult.OK)
+            {
+                Opacity = dialog.NewOpacity;
+                fenceInfo.Opacity = Opacity;
+                Refresh();
+                Save();
+            }
+        }
     }
 
 }

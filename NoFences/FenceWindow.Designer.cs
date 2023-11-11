@@ -35,6 +35,7 @@
             this.minifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opacityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.newFenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,12 +50,13 @@
             this.minifyToolStripMenuItem,
             this.renameToolStripMenuItem,
             this.titleSizeToolStripMenuItem,
+            this.opacityToolStripMenuItem,
             this.toolStripSeparator1,
             this.newFenceToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.appContextMenu.Name = "contextMenuStrip1";
             this.appContextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.appContextMenu.Size = new System.Drawing.Size(152, 164);
+            this.appContextMenu.Size = new System.Drawing.Size(152, 186);
             this.appContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // deleteItemToolStripMenuItem
@@ -94,6 +96,13 @@
             this.titleSizeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.titleSizeToolStripMenuItem.Text = "Title size...";
             this.titleSizeToolStripMenuItem.Click += new System.EventHandler(this.titleSizeToolStripMenuItem_Click);
+            // 
+            // opacityToolStripMenuItem
+            // 
+            this.opacityToolStripMenuItem.Name = "opacityToolStripMenuItem";
+            this.opacityToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.opacityToolStripMenuItem.Text = "Opacity";
+            this.opacityToolStripMenuItem.Click += new System.EventHandler(this.opacityToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -158,6 +167,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteItemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newFenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem titleSizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem opacityToolStripMenuItem;
     }
 }
 
